@@ -1,0 +1,11 @@
+.upload__button-reset {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  right: 20%;
+  background: url(../../../images/button-reset.svg) no-repeat center;
+  border: 2px solid #fff;
+  z-index: 1;
+  cursor: pointer;
+}

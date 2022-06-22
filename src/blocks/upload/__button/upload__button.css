@@ -1,0 +1,12 @@
+.upload__button{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .upload__button{
+      width: 100%
+  }
+}

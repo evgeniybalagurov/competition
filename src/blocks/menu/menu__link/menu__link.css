@@ -1,0 +1,10 @@
+.menu__link {
+  margin-left: 1rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.menu__link:hover {
+  color: #ffffff;
+}

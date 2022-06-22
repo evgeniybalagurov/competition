@@ -1,0 +1,15 @@
+.add-card__input {
+  width: 80%;
+  height: 44px;
+  margin-top: 1rem;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #000;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.add-card__input:focus {
+  outline: none;
+}

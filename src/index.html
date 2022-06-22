@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,7 +16,7 @@
         <ul class="menu">
           <li class="menu-item">
             <a
-              class="menu__link"
+              class="menu__link menu__link_active"
               href="#"
               target="_self"
               >Search</a
@@ -44,49 +44,88 @@
     </header>
 
     <main class="content">
-      <section class="search">
-        <form class="search__form" name="searchForm">
-          <input
-            id="query-input"
-            type="search"
-            name="query"
-            placeholder="Search..."
-            aria-label="Search through site content"
-            class="search__input"
-          />
-          <button class="search__button" type="button">Search</button>
-        </form>
-      </section>
+      <ul class="content__tabs ">
+        <li class="content__pane content__pane_show" id="content-1">
+          <section class="search">
+            <form class="search__form" name="searchForm">
+              <input
+                id="query-input"
+                type="search"
+                name="query"
+                placeholder="Search..."
+                aria-label="Search through site content"
+                class="search__input"
+              />
+              <button class="search__button" type="button">Search</button>
+            </form>
+          </section>
 
-      <section class="feed">
-        <h2>Trends</h2>
-        <ul class="feed__grid">
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-          <li class="gifcard">
-            <img class="gifcard__image" src="https://" alt="text" />
-          </li>
-        </ul>
-      </section>
+          <section class="feed">
+            <!-- <h2>Trends</h2> -->
+            <ul class="feed__grid">
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+            </ul>
+          </section>
+        </li>
+        <li class="content__pane" id="content-2">
+          <section class="random">
+            <li class="gifcard">
+              <img class="gifcard__image" src="https://" alt="text" />
+            </li>
+          </section>
+        </li>
+        <li class="content__pane " id="content-3">
+          <section class="add-card">
+            <form class="add-card__form" name="addForm">
+              <div class="upload">
+                <div class="upload__text">Select a file</div>
+                <button class="upload__button">Select</button>
+                <button class="upload__button-reset" type="button"></button>
+                <input
+                  id="add-file-input"
+                  type="file"
+                  name="addFile"
+                  class="upload__input"
+                />
+              </div>
+              <input
+                id="tegs-input"
+                type="text"
+                name="tags"
+                placeholder="Tags"
+                aria-label="GIF tags"
+                class="add-card__input"
+              />
+              <button class="add-card__button" type="submit">Send</button>
+            </form>
+          </section>
+
+        </li>
+      </ul>
+
     </main>
 
     <footer class="footer"></footer>

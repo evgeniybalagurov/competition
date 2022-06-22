@@ -1,27 +1,102 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#</title>
-  <meta name="description" content="#">
-  <meta name="keywords" content="#">
-  <meta name="author" content="#">
-</head>
-<body class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <meta name="description" content="#" />
+    <meta name="keywords" content="#" />
+    <meta name="author" content="#" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <a class="logo link" href="#" target="_self"></a>
+      <nav>
+        <ul class="menu">
+          <li class="menu-item">
+            <a
+              class="menu__link"
+              href="#"
+              target="_self"
+              >Search</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              class="menu__link"
+              href="#"
+              target="_self"
+              >Trends</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              class="menu__link"
+              href="#"
+              target="_self"
+              >Random GIF</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button class="header__add-btn" type="button">UPLOAD</button>
+    </header>
 
-  <header class="header">
+    <main class="content">
+      <section class="search">
+        <form class="search__form" name="searchForm">
+          <input
+            id="query-input"
+            type="search"
+            name="query"
+            placeholder="Search..."
+            aria-label="Search through site content"
+            class="search__input"
+          />
+          <button class="search__button" type="button">Search</button>
+        </form>
+      </section>
 
-  </header>
+      <section class="feed">
+        <h2>Trends</h2>
+        <ul class="feed__grid">
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+          <li class="gifcard">
+            <img class="gifcard__image" src="https://" alt="text" />
+          </li>
+        </ul>
+      </section>
+    </main>
 
-  <main>
+    <footer class="footer"></footer>
 
-  </main>
+    <template id="gifcard-template">
+      <li class="gifcard">
+        <img class="gifcard__image" src="https://" alt="text" />
+      </li>
+    </template>
 
-  <footer class="footer">
-
-  </footer>
-
-</body>
+    <script type="module" src="./pages/index.js"></script>
+  </body>
 </html>

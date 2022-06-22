@@ -1,0 +1,12 @@
+.search__button {
+  all: unset;
+  cursor: pointer;
+  width: 120px;
+  height: 100%;
+      background: #2432ba;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 18px;
+}

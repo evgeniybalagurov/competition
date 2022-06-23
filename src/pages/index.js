@@ -1,5 +1,24 @@
 import "./index.css";
 
+import Tabs from '../components/Tabs.js';
+
+const configTabs = {
+  linkSelector: '.menu__link',
+  contentSelector: '.content__pane',
+  buttonAddSelector: '.header__add-btn',
+  linkActiveClass: 'menu__link_active',
+  contentShowClass: 'content__pane_show'
+}
+
+const tabObject = new Tabs(configTabs);
+
+tabObject.setEventListener();
+
+
+
+
+
+
 const fileUploadElement = document.querySelector('.upload');
 const textContainer = fileUploadElement.querySelector('.upload__text');
 

@@ -7,9 +7,39 @@
   box-sizing: border-box;
   background-color: #000;
   border: 2px solid #fff;
+  border-radius: 4px;
   color: #fff;
 }
 
 .add-card__input:focus {
   outline: none;
+}
+
+.add-card__input::-webkit-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.add-card__input:-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.add-card__input::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.add-card__input:-ms-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .add-card__input{
+      width: 70%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .add-card__input{
+      width: 100%;
+  }
 }

@@ -1,21 +1,39 @@
 import "./index.css";
 
 import Tabs from '../components/Tabs.js';
+import Api from '../components/Api.js';
+import Form from "../components/Form.js";
 
-const configTabs = {
-  linkSelector: '.menu__link',
-  contentSelector: '.content__pane',
-  buttonAddSelector: '.header__add-btn',
-  linkActiveClass: 'menu__link_active',
-  contentShowClass: 'content__pane_show'
-}
-
-const tabObject = new Tabs(configTabs);
-
-tabObject.setEventListener();
+import {
+  configTabs,
+  baseUrl,
+  apiKey
+} from '../utils/constants.js';
 
 
+const tabs = new Tabs(configTabs);
 
+tabs.setEventListener();
+
+
+const api = new Api(baseUrl, apiKey);
+
+const formAddCardSelector = '.add-card__form';
+
+const formAddCard = new Form(
+  formAddCardSelector,
+  (data) => {
+    api.addCard(data)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(`Error: ${err}`);
+      })
+  }
+);
+
+formAddCard.setEventListener();
 
 
 

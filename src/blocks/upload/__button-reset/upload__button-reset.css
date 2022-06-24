@@ -9,3 +9,15 @@
   z-index: 1;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .upload__button-reset{
+      right: 30%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .upload__button-reset{
+      right: 0;
+  }
+}

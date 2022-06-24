@@ -3,10 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .upload__button{
+    width: 30%;
+  }
 }
 
 @media screen and (max-width: 425px) {
   .upload__button{
-      width: 100%
+    width: 100%;
+    height: 100%;
   }
 }

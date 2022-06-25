@@ -1,46 +1,57 @@
 class Form {
-  constructor(formSelector, handleFormSubmit) {
-    this._formElement = document.querySelector(formSelector);
-    this._inputList = this._formElement.querySelectorAll('.add-card__input');
-    this._buttonElement = this._formElement.querySelector('.add-card__button');
+  constructor(configForm, handleFormSubmit) {
+    this._formElement = document.querySelector(configForm.formSelector);
+    this._fileUploadElement = this._formElement.querySelector(configForm.fileUploadSelector);
+    this._textContainerUploadElement = this._fileUploadElement.querySelector(configForm.textContainerUploadSelector);
+    this._buttonResetUploadElement = this._fileUploadElement.querySelector(configForm.buttonResetUploadSelector);
+    this._inputUploadElement = this._fileUploadElement.querySelector(configForm.inputUploadSelector);
+    this._inputList = this._formElement.querySelectorAll(configForm.inputListSelector);
+    this._buttonElement = this._formElement.querySelector(configForm.buttonSelector);
+    this._buttonDisabledClass = configForm.buttonDisabledClass;
     this._handleFormSubmit = handleFormSubmit;
   }
 
   _getInputValues() {
-    this._inputValues = {};
+    this._formData = new FormData();
 
     this._inputList.forEach(input => {
-  
       if (input.type === 'file') {
-        this._getFileInputValue(input);
+        this._formData.append(input.name, input.files[0]);
       } else {
-        this._inputValues[input.name] = input.value;
+        this._formData.append(input.name, input.value);
       }
     });
 
-    return this._inputValues;
+    return this._formData;
   }
 
-  _getFileInputValue(input) {
-    const file = input.files[0];
-    this._reader = new FileReader();
-
-    this._reader.readAsDataURL(file);
-
-    this._reader.onload = () => {
-      this._inputValues[input.name] = this._reader.result;
-      this._handleFormSubmit(this._inputValues);
-    };
-  
-    this._reader.onerror = () => {
-      console.log(`Error: ${this._reader.error}`);
-    };
+  setLoading(isLoading) {
+    if (isLoading) {
+      this._buttonElement.textContent = 'Sending...';
+      this._buttonElement.disabled = true;
+      this._buttonElement.classList.add(this._buttonDisabledClass);
+    } else {
+      this._buttonElement.textContent = 'Send';
+      this._buttonElement.disabled = false;
+      this._buttonElement.classList.remove(this._buttonDisabledClass);
+    }
   }
 
   setEventListener() {
+    this._fileUploadElement.addEventListener('change', (e) => {
+      const fileName = e.target.value.split('\\').pop();
+
+      this._textContainerUploadElement.textContent = fileName || 'Select a file';
+    });
+
+    this._buttonResetUploadElement.addEventListener('click', (e) => {
+      this._textContainerUploadElement.textContent = 'Select a file';
+      this._inputUploadElement.value = '';
+    });
+
     this._formElement.addEventListener('submit', (e) => {
       e.preventDefault();
-      this._getInputValues();
+      this._handleFormSubmit(this._getInputValues());
     })
   }
 }

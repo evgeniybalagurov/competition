@@ -1,4 +1,4 @@
-.add-card__input {
+.form__input {
   width: 80%;
   height: 44px;
   margin-top: 1rem;
@@ -9,37 +9,38 @@
   border: 2px solid #fff;
   border-radius: 4px;
   color: #fff;
+  cursor: pointer;
 }
 
-.add-card__input:focus {
+.form__input:focus {
   outline: none;
 }
 
-.add-card__input::-webkit-input-placeholder {
+.form__input::-webkit-input-placeholder {
   color: #999;
   opacity: 1;
 }
-.add-card__input:-moz-placeholder {
+.form__input:-moz-placeholder {
   color: #999;
   opacity: 1;
 }
-.add-card__input::-moz-placeholder {
+.form__input::-moz-placeholder {
   color: #999;
   opacity: 1;
 }
-.add-card__input:-ms-input-placeholder {
+.form__input:-ms-input-placeholder {
   color: #999;
   opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
-  .add-card__input{
+  .form__input{
       width: 70%;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .add-card__input{
+  .form__input{
       width: 100%;
   }
 }

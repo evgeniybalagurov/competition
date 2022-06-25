@@ -4,8 +4,11 @@ class Api {
     this._apiKey = apiKey;
   }
 
-  addCard({ file, tags }) {
-    return fetch(`${this._baseUrl}?api_key=${this._apiKey}&file=${file}&tags=${tags}`)
+  addCard(formData) {
+    return fetch(`${this._baseUrl}?api_key=${this._apiKey}`, {
+        method: "POST",
+        body: formData,
+      })
       .then(this._getResposeData)
   }
 
@@ -13,7 +16,7 @@ class Api {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Error: ${res.status}`);
+    return Promise.reject(`Error: ${res.message}`);
   }
 }
 

@@ -130,16 +130,16 @@
         </li>
         <li class="content__pane" id="content-4">
           <section class="add-card">
-            <form class="add-card__form" name="addForm">
+            <form class="form" name="addForm" enctype="multipart/form-data">
               <div class="upload">
-                <div class="upload__text">Select a file</div>
+                <span class="upload__text">Select a file</span>
                 <button class="upload__button" type="button">Select</button>
                 <button class="upload__button-reset" type="button"></button>
                 <input
                   id="add-file-input"
                   type="file"
                   name="file"
-                  class="add-card__input upload__input"
+                  class="form__input upload__input"
                 />
               </div>
               <input
@@ -148,9 +148,9 @@
                 name="tags"
                 placeholder="Tags"
                 aria-label="GIF tags"
-                class="add-card__input"
+                class="form__input"
               />
-              <button class="add-card__button">Send</button>
+              <button class="form__button">Send</button>
             </form>
           </section>
         </li>

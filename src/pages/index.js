@@ -14,9 +14,11 @@ const textContainer = fileUploadElement.querySelector(".upload__text");
 
 const searchButton = document.querySelector(".search__button");
 const feed = document.querySelector(".feed__grid");
+const trendButton = document.querySelector(".trend__button");
 
 const gifList = new GifList({ baseUrl: baseUrl });
 
+console.log(trendButton);
 // const fileUpload = () => {
 //   fileUploadElement.addEventListener("change", (e) => {
 //     const fileName = e.target.value.split("\\").pop();
@@ -67,4 +69,11 @@ searchInput.addEventListener("keypress", (event) => {
       .then((data) => cardList.renderItems(data))
       .catch((err) => console.log(err));
   }
+});
+
+trendButton.addEventListener("click", () => {
+  gifList
+    .getTrendingGifs()
+    .then((data) => cardList.renderItems(data))
+    .catch((err) => console.log(err));
 });

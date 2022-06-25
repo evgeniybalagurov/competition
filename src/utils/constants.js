@@ -5,7 +5,7 @@ export const apiKey = `?api_key=${KEY}`;
 export const limit = `&limit=10`;
 export const query = `&q=`
 
-export const searchInput = document.querySelector(".search__input");
+export const searchInput = document.querySelector('input[type="search"]');
 
 export const cardTemplate = document
   .querySelector("#card-template")

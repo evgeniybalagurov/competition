@@ -1,4 +1,4 @@
-.header__add-btn {
+.menu__add-btn {
   background-color: #771ef400;
   border: 2px solid #ffffff;
   border-radius: 4px;
@@ -13,28 +13,25 @@
   width: 150px;
 }
   
-  .header__add-btn:hover {
+  .menu__add-btn:hover {
     opacity: .6;
   }
   
-  .header__add-btn:active {
+  .menu__add-btn:active {
     position: relative;
     top: 1px;
   }
   
   @media screen and (max-width: 800px) {
-    .header__add-btn {
-      width: 282px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+    .menu__add-btn {
+      margin-left: 50px;
     }
   }
   
   @media screen and (min-width: 800px) {
-    .header__add-btn {
+    .menu__add-btn {
       width: 150px;
-      margin-right: 0;
+      margin-left: 77px;
       float: right;
     }
   }

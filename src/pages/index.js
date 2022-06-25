@@ -58,3 +58,13 @@ searchButton.addEventListener("click", () => {
     .then((data) => cardList.renderItems(data))
     .catch((err) => console.log(err));
 });
+
+searchInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    gifList
+      .getGifs(searchInput.value)
+      .then((data) => cardList.renderItems(data))
+      .catch((err) => console.log(err));
+  }
+});

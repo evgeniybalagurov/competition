@@ -4,11 +4,11 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/header/header.css);
-@import url(../blocks/header/__add-btn/header__add-btn.css);
 @import url(../blocks/logo/logo.css);
 @import url(../blocks/link/link.css);
 @import url(../blocks/menu/menu.css);
 @import url(../blocks/menu/menu__link/menu__link.css);
+@import url(../blocks/menu/__add-btn/menu__add-btn.css);
 @import url(../blocks/content/__tabs/content__tabs.css);
 @import url(../blocks/content/__pane/content__pane.css);
 @import url(../blocks/content/__pane/_show/content__pane_show.css);

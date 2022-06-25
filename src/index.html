@@ -12,6 +12,7 @@
   <body class="page">
     <header class="header">
       <a class="logo link" href="#" target="_self"></a>
+      <!-- <button class="header__add-btn" type="button">UPLOAD</button> -->
       <nav>
         <ul class="menu">
           <li class="menu-item">
@@ -25,28 +26,28 @@
           <li class="menu-item">
             <a class="menu__link" href="#" target="_self">Random GIF</a>
           </li>
+          <li class="menu-item">
+            <button class="menu__add-btn" type="button">UPLOAD</button>
+          </li>
         </ul>
       </nav>
-      <button class="header__add-btn" type="button">UPLOAD</button>
     </header>
 
     <main class="content">
       <ul class="content__tabs">
         <li class="content__pane content__pane_show" id="content-1">
           <section class="search">
-            <p>search</p>
             <form class="search__form" name="searchForm">
               <input
                 id="query-input"
                 type="search"
-                name="query"
+                name="q"
                 placeholder="Search..."
                 aria-label="Search through site content"
                 class="search__input"
               />
-              <button class="search__button" type="button">Search</button>
+              <input class="search__button" type="button" value="Search"></input>
             </form>
-            <p>search</p>
           </section>
 
           <section class="feed">

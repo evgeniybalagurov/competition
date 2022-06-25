@@ -3,10 +3,12 @@ import "./index.css";
 import Tabs from '../components/Tabs.js';
 import Api from '../components/Api.js';
 import Form from "../components/Form.js";
+import FormValidator from "../components/FormValidator.js";
 
 import {
   configTabs,
   configAddForm,
+  configValidation,
   uploadUrl,
   apiKey
 } from '../utils/constants.js';
@@ -34,3 +36,20 @@ const formAddCard = new Form(
 );
 
 formAddCard.setEventListener();
+
+
+const formValidators = {}
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(configValidation, formElement);
+    const formName = formElement.getAttribute('name');
+
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(configValidation);

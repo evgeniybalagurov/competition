@@ -1,7 +1,7 @@
 .upload {
   height: 44px;
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
@@ -12,6 +12,6 @@
 @media screen and (max-width: 425px) {
   .upload{
     height: 88px;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 }

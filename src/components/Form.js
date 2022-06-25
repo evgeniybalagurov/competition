@@ -7,7 +7,7 @@ class Form {
     this._inputUploadElement = this._fileUploadElement.querySelector(configForm.inputUploadSelector);
     this._inputList = this._formElement.querySelectorAll(configForm.inputListSelector);
     this._buttonElement = this._formElement.querySelector(configForm.buttonSelector);
-    this._buttonDisabledClass = configForm.buttonDisabledClass;
+    this._inactiveButtonClass = configForm.inactiveButtonClass;
     this._handleFormSubmit = handleFormSubmit;
   }
 
@@ -25,15 +25,19 @@ class Form {
     return this._formData;
   }
 
+  _setInactiveButton() {
+    this._buttonElement.disabled = true;
+    this._buttonElement.classList.add(this._inactiveButtonClass);
+  }
+
   setLoading(isLoading) {
     if (isLoading) {
       this._buttonElement.textContent = 'Sending...';
-      this._buttonElement.disabled = true;
-      this._buttonElement.classList.add(this._buttonDisabledClass);
+      this._setInactiveButton();
     } else {
       this._buttonElement.textContent = 'Send';
-      this._buttonElement.disabled = false;
-      this._buttonElement.classList.remove(this._buttonDisabledClass);
+      this._formElement.reset();
+      this._textContainerUploadElement.textContent = 'Select a file';
     }
   }
 
@@ -47,6 +51,7 @@ class Form {
     this._buttonResetUploadElement.addEventListener('click', (e) => {
       this._textContainerUploadElement.textContent = 'Select a file';
       this._inputUploadElement.value = '';
+      this._setInactiveButton();
     });
 
     this._formElement.addEventListener('submit', (e) => {

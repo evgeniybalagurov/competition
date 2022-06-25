@@ -130,26 +130,33 @@
         </li>
         <li class="content__pane" id="content-4">
           <section class="add-card">
-            <form class="form" name="addForm" enctype="multipart/form-data">
+            <form class="form" name="add-form" enctype="multipart/form-data" novalidate>
               <div class="upload">
                 <span class="upload__text">Select a file</span>
-                <button class="upload__button" type="button">Select</button>
                 <button class="upload__button-reset" type="button"></button>
+                <button class="upload__button" type="button">Select</button>
                 <input
-                  id="add-file-input"
+                  id="add-input"
                   type="file"
                   name="file"
-                  class="form__input upload__input"
+                  class="form__input form__input_type_file upload__input"
+                  accept=".gif"
+                  required
                 />
               </div>
+              <span class="form__error add-input-error"></span>
               <input
-                id="tegs-input"
+                id="tags-input"
                 type="text"
                 name="tags"
-                placeholder="Tags"
+                placeholder="Enter tags (tag1, tag2, tag3, ...)"
                 aria-label="GIF tags"
                 class="form__input"
+                minlength="2"
+                maxlength="30"
+                required
               />
+              <span class="form__error tags-input-error"></span>
               <button class="form__button">Send</button>
             </form>
           </section>

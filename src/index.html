@@ -15,28 +15,15 @@
       <nav>
         <ul class="menu">
           <li class="menu-item">
-            <a
-              class="menu__link menu__link_active"
-              href="#"
-              target="_self"
+            <a class="menu__link menu__link_active" href="#" target="_self"
               >Search</a
             >
           </li>
           <li class="menu-item">
-            <a
-              class="menu__link"
-              href="#"
-              target="_self"
-              >Trends</a
-            >
+            <a class="menu__link" href="#" target="_self">Trends</a>
           </li>
           <li class="menu-item">
-            <a
-              class="menu__link"
-              href="#"
-              target="_self"
-              >Random GIF</a
-            >
+            <a class="menu__link" href="#" target="_self">Random GIF</a>
           </li>
         </ul>
       </nav>
@@ -44,9 +31,10 @@
     </header>
 
     <main class="content">
-      <ul class="content__tabs ">
+      <ul class="content__tabs">
         <li class="content__pane content__pane_show" id="content-1">
           <section class="search">
+            <p>search</p>
             <form class="search__form" name="searchForm">
               <input
                 id="query-input"
@@ -58,35 +46,12 @@
               />
               <button class="search__button" type="button">Search</button>
             </form>
+            <p>search</p>
           </section>
 
           <section class="feed">
             <!-- <h2>Trends</h2> -->
             <ul class="feed__grid">
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
-              <li class="gifcard">
-                <img class="gifcard__image" src="https://" alt="text" />
-              </li>
             </ul>
           </section>
         </li>
@@ -97,7 +62,7 @@
             </li>
           </section>
         </li>
-        <li class="content__pane " id="content-3">
+        <li class="content__pane" id="content-3">
           <section class="add-card">
             <form class="add-card__form" name="addForm">
               <div class="upload">
@@ -122,20 +87,18 @@
               <button class="add-card__button" type="submit">Send</button>
             </form>
           </section>
-
         </li>
       </ul>
-
     </main>
 
     <footer class="footer"></footer>
 
-    <template id="gifcard-template">
-      <li class="gifcard">
-        <img class="gifcard__image" src="https://" alt="text" />
+    <template id="card-template">
+      <li class="card">
+        <img class="card__image" src="https://" alt="text" />
       </li>
     </template>
 
-    <script type="module" src="./pages/index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>

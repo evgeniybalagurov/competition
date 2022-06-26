@@ -35,7 +35,6 @@
 
     <main class="content">
       <ul class="content__tabs">
-
         <li class="content__pane content__pane_show" id="content-1">
           <section class="search">
             <form class="search__form" name="searchForm">
@@ -54,43 +53,78 @@
             <ul class="feed__grid">
             </ul>
           </section>
-        </li> 
-
-        <li class="content__pane content__pane_show" id="content-2">
+        </li>
+        <li class="content__pane" id="content-2">
+          <section class="feed">
+            <!-- <h2>Trends</h2> -->
+            <ul class="feed__grid">
+<!--               <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li>
+              <li class="gifcard">
+                <img class="gifcard__image" src="https://" alt="text" />
+              </li> -->
+            </ul>
+          </section>
+        </li>
+        <li class="content__pane" id="content-3">
           <section class="random">
             <div class="random__wrapper">
               <img class="random__image" src="https://" alt="text" />
             </div>
           </section>
         </li>
-
-        <li class="content__pane" id="content-3">
+        <li class="content__pane" id="content-4">
           <section class="add-card">
-            <form class="add-card__form" name="addForm">
+            <form class="form" name="add-form" enctype="multipart/form-data" novalidate>
               <div class="upload">
-                <div class="upload__text">Select a file</div>
-                <button class="upload__button">Select</button>
+                <span class="upload__text">Select a file</span>
                 <button class="upload__button-reset" type="button"></button>
+                <button class="upload__button" type="button">Select</button>
                 <input
-                  id="add-file-input"
+                  id="add-input"
                   type="file"
-                  name="addFile"
-                  class="upload__input"
+                  name="file"
+                  class="form__input form__input_type_file upload__input"
+                  accept=".gif"
+                  required
                 />
               </div>
+              <span class="form__error add-input-error"></span>
               <input
-                id="tegs-input"
+                id="tags-input"
                 type="text"
                 name="tags"
-                placeholder="Tags"
+                placeholder="Enter tags (tag1, tag2, tag3, ...)"
                 aria-label="GIF tags"
-                class="add-card__input"
+                class="form__input"
+                minlength="2"
+                maxlength="30"
+                required
               />
-              <button class="add-card__button" type="submit">Send</button>
+              <span class="form__error tags-input-error"></span>
+              <button class="form__button">Send</button>
             </form>
           </section>
         </li>
-
       </ul>
     </main>
 

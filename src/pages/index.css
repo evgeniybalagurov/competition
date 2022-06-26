@@ -16,7 +16,6 @@
 @import url(../blocks/search/__form/search__form.css);
 @import url(../blocks/search/__input/search__input.css);
 @import url(../blocks/search/__button/search__button.css);
-@import url(../blocks/search/_show/search_show.css);
 @import url(../blocks/feed/feed.css);
 @import url(../blocks/feed/__grid/feed__grid.css);
 @import url(../blocks/grid/grid.css);
@@ -32,8 +31,12 @@
 @import url(../blocks/upload/__button-reset/upload__button-reset.css);
 @import url(../blocks/upload/__input/upload__input.css);
 @import url(../blocks/add-card/add-card.css);
-@import url(../blocks/add-card/__form/add-card__form.css);
-@import url(../blocks/add-card/__input/add-card__input.css);
-@import url(../blocks/add-card/__button/add-card__button.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_type/form__input_type_error.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__button/_disabled/form__button_disabled.css);
+@import url(../blocks/form/__error/form__error.css);
+@import url(../blocks/form/__error/_visible/form__error_visible.css);
 
 @import url(../blocks/footer/footer.css);

@@ -21,26 +21,92 @@ const searchLink = document.querySelector(".search__link");
 
 const api = new Api({ baseUrl: baseUrl });
 
-const fileUpload = () => {
-  fileUploadElement.addEventListener("change", (e) => {
-    const fileName = e.target.value.split("\\").pop();
+// const fileUpload = () => {
+//   fileUploadElement.addEventListener("change", (e) => {
+//     const fileName = e.target.value.split("\\").pop();
 
-    textContainer.textContent = fileName || "Select a file";
+//     textContainer.textContent = fileName || "Select a file";
+//   });
+// };
+
+import Tabs from '../components/Tabs.js';
+import Api from '../components/Api.js';
+import Form from "../components/Form.js";
+import FormValidator from "../components/FormValidator.js";
+
+import {
+  configTabs,
+  configAddForm,
+  configValidation,
+  uploadUrl,
+  apiKey
+} from '../utils/constants.js';
+
+
+const tabs = new Tabs(
+  configTabs,
+  (indexTab) => {
+    switch(++indexTab) {
+      case 1:
+        console.log(indexTab);
+        break
+      case 2:
+        console.log(indexTab);
+        break
+      case 3:
+        console.log(indexTab);
+        break
+      case 4:
+        console.log(indexTab);
+        break
+      // default:
+
+      //   break
+    }
+    // console.log(indexTab);
   });
-};
 
-fileUpload();
+tabs.setEventListener();
 
-const fileReset = () => {
-  fileUploadElement
-    .querySelector(".upload__button-reset")
-    .addEventListener("click", (e) => {
-      textContainer.textContent = "Select a file";
-      fileUploadElement.querySelector(".upload__input").value = "";
-    });
-};
 
-fileReset();
+const api = new Api(uploadUrl, apiKey);
+
+const formAddCard = new Form(
+  configAddForm,
+  (data) => {
+    formAddCard.setLoading(true);
+    api.addCard(data)
+      .catch(err => {
+        console.log(`Error: ${err}`);
+      })
+      .finally(() => {
+        formAddCard.setLoading(false);
+      })
+  }
+);
+
+formAddCard.setEventListener();
+
+
+const formValidators = {}
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(configValidation, formElement);
+    const formName = formElement.getAttribute('name');
+
+// const fileReset = () => {
+//   fileUploadElement
+//     .querySelector(".upload__button-reset")
+//     .addEventListener("click", (e) => {
+//       textContainer.textContent = "Select a file";
+//       fileUploadElement.querySelector(".upload__input").value = "";
+//     });
+// };
+
+// fileReset();
 
 function generateCard(cardItem) {
   return new GridItem(cardItem, cardTemplate).generateCard();
@@ -113,3 +179,10 @@ randomLink.addEventListener("click", () => {
 searchLink.addEventListener("click", () => {
   emptyFeed();
 });
+
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(configValidation);

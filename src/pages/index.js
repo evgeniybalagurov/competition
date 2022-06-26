@@ -14,7 +14,28 @@ import {
 } from '../utils/constants.js';
 
 
-const tabs = new Tabs(configTabs);
+const tabs = new Tabs(
+  configTabs,
+  (indexTab) => {
+    switch(++indexTab) {
+      case 1:
+        console.log(indexTab);
+        break
+      case 2:
+        console.log(indexTab);
+        break
+      case 3:
+        console.log(indexTab);
+        break
+      case 4:
+        console.log(indexTab);
+        break
+      // default:
+
+      //   break
+    }
+    // console.log(indexTab);
+  });
 
 tabs.setEventListener();
 

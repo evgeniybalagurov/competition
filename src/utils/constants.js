@@ -7,6 +7,7 @@ export const configApi = {
   trendingUrl: "trending",
   randomUrl: "random",
   apiKey: `?api_key=${KEY}`,
+  apiKeyAdd: KEY,
   limit: `&limit=20`,
   query: `&q=`
 }

@@ -6,6 +6,7 @@ export default class Api {
     this._trendingUrl = config.trendingUrl,
     this._randomUrl = config.randomUrl,
     this._apiKey = config.apiKey,
+    this._apiKeyAdd = config.apiKeyAdd,
     this._limit = config.limit,
     this._query = config.query
   }
@@ -53,7 +54,8 @@ export default class Api {
   }
 
   addGif(formData) {
-    return fetch(this._uploadUrl + this._apiKey, {
+    formData.append('api_key', this._apiKeyAdd);
+    return fetch(this._uploadUrl, {
         method: "POST",
         body: formData,
       })

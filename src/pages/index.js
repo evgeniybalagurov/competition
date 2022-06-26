@@ -30,6 +30,7 @@ const formAddCard = new Form(
     api.addGif(data)
       .catch(err => {
         console.log(`Error: ${err}`);
+        alert(`Error: ${err}`);
       })
       .finally(() => {
         formAddCard.setLoading(false);
@@ -104,7 +105,10 @@ const tabs = new Tabs(
             trendsList.resetContainer();
             trendsList.renderItems(data);
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(err)
+            alert(`Error: ${err}`);
+          });
         break
       case 3:
         api
@@ -112,7 +116,10 @@ const tabs = new Tabs(
           .then((item) => {
             gifItem.renderItem(item);
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(err);
+            alert(`Error: ${err}`);
+          });
         break
     }
   });
@@ -128,7 +135,10 @@ const search = new Search(
     api
       .searchGifs(searchInputElement.value)
       .then((data) => gifList.renderItems(data))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        alert(`Error: ${err}`);
+      });
   }
 );
 

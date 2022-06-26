@@ -10,3 +10,11 @@
   cursor: pointer;
   font-size: 18px;
 }
+
+@media screen and (max-width: 425px) {
+  .search__button {
+    height: 44px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+  }
+}

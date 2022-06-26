@@ -101,6 +101,7 @@ const tabs = new Tabs(
         api
           .getTrendingGifs()
           .then((data) => {
+            trendsList.resetContainer();
             trendsList.renderItems(data);
           })
           .catch((err) => console.log(err));
@@ -108,7 +109,9 @@ const tabs = new Tabs(
       case 3:
         api
           .getRandomGif()
-          .then((item) => gifItem.renderItem(item))
+          .then((item) => {
+            gifItem.renderItem(item);
+          })
           .catch((err) => console.log(err));
         break
     }
@@ -116,15 +119,12 @@ const tabs = new Tabs(
 
 tabs.setEventListener();
 
-const emptyFeed = () => {
-  feed.innerHTML = "";
-}
 
 const search = new Search(
   searchButtonElement,
   searchInputElement,
   () => {
-    emptyFeed();
+    gifList.resetContainer();
     api
       .searchGifs(searchInputElement.value)
       .then((data) => gifList.renderItems(data))
@@ -133,22 +133,3 @@ const search = new Search(
 );
 
 search.setEventListeners();
-
-// const renderSearchItems = () => {
-//   emptyFeed();
-//   api
-//     .searchGifs(searchInput.value)
-//     .then((data) => gifList.renderItems(data))
-//     .catch((err) => console.log(err));
-// }
-
-// searchButton.addEventListener("click", () => {
-//   renderSearchItems();
-// });
-
-// searchInput.addEventListener("keypress", (event) => {
-//   if (event.key === "Enter") {
-//     event.preventDefault();
-//     renderSearchItems();
-//   }
-// });

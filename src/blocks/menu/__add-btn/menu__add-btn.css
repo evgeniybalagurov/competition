@@ -1,6 +1,6 @@
 .menu__add-btn {
   width: 150px;
-  margin: 5px;
+  margin: 15px 0 15px 20px;
   padding: 11px;
   background-color: #111;
   border: 2px solid #fff;
@@ -13,25 +13,17 @@
   transition: all .5s;
 }
 
-  .menu__add-btn:hover {
-    opacity: .6;
-  }
+.menu__add-btn:hover {
+  opacity: .6;
+}
 
-  .menu__add-btn:active {
-    position: relative;
-    top: 1px;
-  }
+.menu__add-btn:active {
+  position: relative;
+  top: 1px;
+}
 
-  @media screen and (max-width: 800px) {
-    .menu__add-btn {
-      margin-left: 50px;
-    }
+@media screen and (max-width: 425px) {
+  .menu__add-btn {
+    margin-left: 0;
   }
-
-  @media screen and (min-width: 800px) {
-    .menu__add-btn {
-      width: 150px;
-      margin-left: 77px;
-      float: right;
-    }
-  }
+}

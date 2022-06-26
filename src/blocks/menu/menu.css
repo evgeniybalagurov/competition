@@ -1,20 +1,23 @@
 .menu {
   margin: 0;
-  padding: 1rem 1.5rem;
+  padding: 20px 0;
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
 }
 
-@media screen and (min-width: 320px) and (max-width: 425px) {
+@media screen and (max-width: 525px) {
   .menu {
-    width: 100%;
-    min-width: 320px;
-    padding: 28px 27px 31px;
-    display: flex;
     flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .menu {
     align-items: flex-start;
-    flex-wrap: wrap;
   }
 }

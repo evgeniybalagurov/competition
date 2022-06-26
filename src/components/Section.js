@@ -18,4 +18,7 @@ export default class Section {
     this._container.prepend(element);
   }
 
+  resetContainer() {
+    this._container.innerHTML = '';
+  }
 }

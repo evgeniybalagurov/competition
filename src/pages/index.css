@@ -18,6 +18,7 @@
 @import url(../blocks/search/__button/search__button.css);
 @import url(../blocks/feed/feed.css);
 @import url(../blocks/feed/__grid/feed__grid.css);
+@import url(../blocks/trends/trends.css);
 @import url(../blocks/grid/grid.css);
 @import url(../blocks/grid/__image/grid__image.css);
 @import url(../blocks/card/card.css);

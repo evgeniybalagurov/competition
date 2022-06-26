@@ -19,7 +19,6 @@ export default class Api {
       })
       .then((res) => {
         const data = res.data;
-        console.log(res.message);
         return data;
       })
       .catch((err) => console.log(err));
@@ -34,7 +33,6 @@ export default class Api {
       })
       .then((res) => {
         const data = res.data;
-        console.log(res.meta.msg);
         return data;
       })
       .catch((err) => console.log(err));
@@ -49,7 +47,6 @@ export default class Api {
       })
       .then((res) => {
         const data = res.data;
-        console.log(res.message);
         return data;
       })
       .catch((err) => console.log(err));

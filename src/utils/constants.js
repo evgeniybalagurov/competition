@@ -1,11 +1,11 @@
 const KEY = "l6r7lzQX38ULq1n292LLpWHwUU4iNOWC";
 
 export const configApi = {
-  baseUrl: `https://api.giphy.com/v1/`,
+  baseUrl: `https://api.giphy.com/v1/gifs/`,
   uploadUrl: 'http://upload.giphy.com/v1/gifs',
-  searchUrl: "gifs/search",
-  trendingUrl: "gifs/trending",
-  randomUrl: "gifs/random",
+  searchUrl: "search",
+  trendingUrl: "trending",
+  randomUrl: "random",
   apiKey: `?api_key=${KEY}`,
   limit: `&limit=20`,
   query: `&q=`

@@ -1,6 +1,5 @@
 import "./index.css";
 import {
-  KEY,
   baseUrl,
   searchInput,
   cardTemplate,
@@ -14,12 +13,12 @@ const textContainer = fileUploadElement.querySelector(".upload__text");
 
 const searchButton = document.querySelector(".search__button");
 const feed = document.querySelector(".feed__grid");
-const trendButton = document.querySelector(".trend__button");
-const randomButton = document.querySelector(".radnom__button");
+const trendLink = document.querySelector(".trend__link");
+const randomLink = document.querySelector(".radnom__link");
+const searchLink = document.querySelector(".search__link");
 
 const gifList = new GifList({ baseUrl: baseUrl });
 
-console.log(trendButton);
 const fileUpload = () => {
   fileUploadElement.addEventListener("change", (e) => {
     const fileName = e.target.value.split("\\").pop();
@@ -55,33 +54,46 @@ const cardList = new Section(
   feed
 );
 
+function emptyFeed() {
+  feed.innerHTML = "";
+}
+
 searchButton.addEventListener("click", () => {
+  emptyFeed();
   gifList
-    .getGifs(searchInput.value)
+    .searchGifs(searchInput.value)
     .then((data) => cardList.renderItems(data))
     .catch((err) => console.log(err));
 });
 
 searchInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
+    emptyFeed();
     event.preventDefault();
     gifList
-      .getGifs(searchInput.value)
+      .searchGifs(searchInput.value)
       .then((data) => cardList.renderItems(data))
       .catch((err) => console.log(err));
   }
 });
 
-trendButton.addEventListener("click", () => {
+trendLink.addEventListener("click", () => {
+  emptyFeed();
   gifList
     .getTrendingGifs()
     .then((data) => cardList.renderItems(data))
     .catch((err) => console.log(err));
 });
 
-randomButton.addEventListener("click", () => {
+
+randomLink.addEventListener("click", () => {
+  emptyFeed();
   gifList
     .getRandomGif()
     .then((item) => cardList.renderItem(item))
     .catch((err) => console.log(err));
+});
+
+searchLink.addEventListener("click", () => {
+  emptyFeed();
 });

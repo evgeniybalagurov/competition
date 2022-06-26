@@ -12,7 +12,7 @@ export default class GifList {
     this._baseUrl = baseUrl;
   }
 
-  getGifs(queryTerm) {
+  searchGifs(queryTerm) {
     return fetch(this._baseUrl + searchUrl + apiKey + limit + query + queryTerm)
       .then((res) => {
         if (res) {

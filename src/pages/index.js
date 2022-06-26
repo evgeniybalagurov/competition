@@ -4,20 +4,22 @@ import {
   searchInput,
   cardTemplate,
 } from "./../utils/constants.js";
-import GifList from "../components/GifList";
+import Api from "../components/Api.js";
 import Section from "../components/Section.js";
-import Card from "../components/Card.js";
+import GridItem from "../components/GridItem.js";
+import Item from "../components/Item.js";
 
 const fileUploadElement = document.querySelector(".upload");
 const textContainer = fileUploadElement.querySelector(".upload__text");
 
 const searchButton = document.querySelector(".search__button");
 const feed = document.querySelector(".feed__grid");
+const randomGif = document.querySelector(".random__wrapper");
 const trendLink = document.querySelector(".trend__link");
 const randomLink = document.querySelector(".radnom__link");
 const searchLink = document.querySelector(".search__link");
 
-const gifList = new GifList({ baseUrl: baseUrl });
+const api = new Api({ baseUrl: baseUrl });
 
 const fileUpload = () => {
   fileUploadElement.addEventListener("change", (e) => {
@@ -41,17 +43,31 @@ const fileReset = () => {
 fileReset();
 
 function generateCard(cardItem) {
-  return new Card(cardItem, cardTemplate).generateCard();
+  return new GridItem(cardItem, cardTemplate).generateCard();
 }
 
-const cardList = new Section(
+function generateItem(gif) {
+  return new Item(gif).generateItem();
+}
+
+const gifList = new Section(
   {
-    renderer: (cardItem) => {
-      const card = generateCard(cardItem);
-      cardList.addItem(card);
+    renderer: (gif) => {
+      const gifCard = generateCard(gif);
+      gifList.addItem(gifCard);
     },
   },
   feed
+);
+
+const gifItem = new Section(
+  {
+    renderer: (gif) => {
+      const item = generateItem(gif);
+      gifItem.addItem(item);
+    },
+  },
+  randomGif
 );
 
 function emptyFeed() {
@@ -60,9 +76,9 @@ function emptyFeed() {
 
 searchButton.addEventListener("click", () => {
   emptyFeed();
-  gifList
+  api
     .searchGifs(searchInput.value)
-    .then((data) => cardList.renderItems(data))
+    .then((data) => gifList.renderItems(data))
     .catch((err) => console.log(err));
 });
 
@@ -70,27 +86,27 @@ searchInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     emptyFeed();
     event.preventDefault();
-    gifList
+    api
       .searchGifs(searchInput.value)
-      .then((data) => cardList.renderItems(data))
+      .then((data) => gifList.renderItems(data))
       .catch((err) => console.log(err));
   }
 });
 
 trendLink.addEventListener("click", () => {
   emptyFeed();
-  gifList
+  api
     .getTrendingGifs()
-    .then((data) => cardList.renderItems(data))
+    .then((data) => gifList.renderItems(data))
     .catch((err) => console.log(err));
 });
 
 
 randomLink.addEventListener("click", () => {
   emptyFeed();
-  gifList
+  api
     .getRandomGif()
-    .then((item) => cardList.renderItem(item))
+    .then((item) => gifItem.renderItem(item))
     .catch((err) => console.log(err));
 });
 

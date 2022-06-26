@@ -7,7 +7,7 @@ import {
   query,
 } from "../utils/constants.js";
 
-export default class GifList {
+export default class Api {
   constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
   }
@@ -41,6 +41,7 @@ export default class GifList {
       })
       .catch((err) => console.log(err));
   }
+  
   getRandomGif() {
     return fetch(this._baseUrl + randomUrl + apiKey)
       .then((res) => {

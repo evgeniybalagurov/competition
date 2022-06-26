@@ -1,6 +1,6 @@
 import { searchUrl, apiKey, limit, query } from "../utils/constants.js";
 
-export default class Card {
+export default class GridItem {
   constructor({ images, title }, cardElement) {
     this._url = images.downsized_medium.url;
     this._name = title;

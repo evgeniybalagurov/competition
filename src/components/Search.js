@@ -14,7 +14,5 @@ export default class GifList {
     this._title.textContent = this._name;
     return this._element;
   }
-  getGifs(){
-    
-  }
+
 }

@@ -24,7 +24,7 @@
             <a class="menu__link trend__button" href="#" target="_self">Trends</a>
           </li>
           <li class="menu-item">
-            <a class="menu__link" href="#" target="_self">Random GIF</a>
+            <a class="menu__link radnom__button" href="#" target="_self">Random GIF</a>
           </li>
           <li class="menu-item">
             <button class="menu__add-btn" type="button">UPLOAD</button>
@@ -35,6 +35,7 @@
 
     <main class="content">
       <ul class="content__tabs">
+
         <li class="content__pane content__pane_show" id="content-1">
           <section class="search">
             <form class="search__form" name="searchForm">
@@ -49,20 +50,21 @@
               <input class="search__button" type="button" value="Search"></input>
             </form>
           </section>
-
           <section class="feed">
-            <h2>Trends</h2>
             <ul class="feed__grid">
             </ul>
           </section>
-        </li>
+        </li> 
+
         <li class="content__pane" id="content-2">
           <section class="random">
-            <li class="gifcard">
-              <img class="gifcard__image" src="https://" alt="text" />
-            </li>
+            <h2>Random</h2>
+            <div class="random__wrapper">
+              <img class="random__image" src="https://media2.giphy.com/media/26FPKsfr1V9Yw4eru/giphy.gif?cid=7716b5ede1b4djy3o1rid9gyd1xo7hqerddqxyqfluqb6j4w&rid=giphy.gif&ct=g" alt="text" />
+            </div>
           </section>
         </li>
+
         <li class="content__pane" id="content-3">
           <section class="add-card">
             <form class="add-card__form" name="addForm">
@@ -89,6 +91,7 @@
             </form>
           </section>
         </li>
+
       </ul>
     </main>
 
@@ -100,6 +103,12 @@
       </li>
     </template>
 
-    <script type="module" src="./index.js"></script>
+    <template id="grid-template">
+      <li class="grid">
+        <img class="grid__image" src="https://" alt="text">
+      </li>
+    </template>
+
+    <script type="module" src="./page/index.js"></script>
   </body>
 </html>

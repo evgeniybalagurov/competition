@@ -15,30 +15,31 @@ const textContainer = fileUploadElement.querySelector(".upload__text");
 const searchButton = document.querySelector(".search__button");
 const feed = document.querySelector(".feed__grid");
 const trendButton = document.querySelector(".trend__button");
+const randomButton = document.querySelector(".radnom__button");
 
 const gifList = new GifList({ baseUrl: baseUrl });
 
 console.log(trendButton);
-// const fileUpload = () => {
-//   fileUploadElement.addEventListener("change", (e) => {
-//     const fileName = e.target.value.split("\\").pop();
+const fileUpload = () => {
+  fileUploadElement.addEventListener("change", (e) => {
+    const fileName = e.target.value.split("\\").pop();
 
-//     textContainer.textContent = fileName || "Select a file";
-//   });
-// };
+    textContainer.textContent = fileName || "Select a file";
+  });
+};
 
-// fileUpload();
+fileUpload();
 
-// const fileReset = () => {
-//   fileUploadElement
-//     .querySelector(".upload__button-reset")
-//     .addEventListener("click", (e) => {
-//       textContainer.textContent = "Select a file";
-//       fileUploadElement.querySelector(".upload__input").value = "";
-//     });
-// };
+const fileReset = () => {
+  fileUploadElement
+    .querySelector(".upload__button-reset")
+    .addEventListener("click", (e) => {
+      textContainer.textContent = "Select a file";
+      fileUploadElement.querySelector(".upload__input").value = "";
+    });
+};
 
-// fileReset();
+fileReset();
 
 function generateCard(cardItem) {
   return new Card(cardItem, cardTemplate).generateCard();
@@ -75,5 +76,12 @@ trendButton.addEventListener("click", () => {
   gifList
     .getTrendingGifs()
     .then((data) => cardList.renderItems(data))
+    .catch((err) => console.log(err));
+});
+
+randomButton.addEventListener("click", () => {
+  gifList
+    .getRandomGif()
+    .then((item) => cardList.renderItem(item))
     .catch((err) => console.log(err));
 });

@@ -19,8 +19,13 @@
 @import url(../blocks/search/_show/search_show.css);
 @import url(../blocks/feed/feed.css);
 @import url(../blocks/feed/__grid/feed__grid.css);
+@import url(../blocks/grid/grid.css);
+@import url(../blocks/grid/__image/grid__image.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/random/random.css);
+@import url(../blocks/random/__wrapper/random__wrapper.css);
+@import url(../blocks/random/__gif/random__gif.css);
 @import url(../blocks/upload/upload.css);
 @import url(../blocks/upload/__text/upload__text.css);
 @import url(../blocks/upload/__button/upload__button.css);

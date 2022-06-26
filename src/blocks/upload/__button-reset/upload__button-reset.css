@@ -1,0 +1,14 @@
+.upload__button-reset {
+  width: 44px;
+  height: 44px;
+  background: url(../../../images/button-reset.svg) no-repeat center;
+  border: 2px solid #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .upload__button-reset{
+    width: 15%;
+  }
+}

@@ -1,0 +1,23 @@
+.upload__text{
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+  color: #999;
+}
+
+@media screen and (max-width: 768px) {
+  .upload__text{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .upload__text{
+    width: 85%;
+    border-radius: 4px 0 0;
+  }
+}

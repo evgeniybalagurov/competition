@@ -1,17 +1,24 @@
 .header {
-  /* max-width: 880px; */
-  margin: auto;
-  padding: 24px 0 22px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 30px;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   align-items: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 880px) {
+@media screen and (max-width: 525px) {
   .header {
-    min-width: 320px;
-    padding: 28px 27px 31px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    flex-direction: column;
   }
 }

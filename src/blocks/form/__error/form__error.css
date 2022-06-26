@@ -1,0 +1,6 @@
+.form__error {
+  min-height: 30px;
+  margin: 5px;
+  color: #f00;
+  opacity: 0;
+}

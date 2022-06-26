@@ -3,10 +3,18 @@
   cursor: pointer;
   width: 120px;
   height: 100%;
-      background: #2432ba;
-      text-align: center;
-      color: #fff;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-      font-size: 18px;
+  background: #2432ba;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 425px) {
+  .search__button {
+    height: 44px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+  }
 }

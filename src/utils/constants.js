@@ -1,26 +1,34 @@
-export const KEY = "l6r7lzQX38ULq1n292LLpWHwUU4iNOWC";
-export const baseUrl = `https://api.giphy.com/v1/`;
-export const searchUrl = "gifs/search";
-export const trendingUrl = "gifs/trending";
-export const randomUrl = "gifs/random";
-export const apiKey = `?api_key=${KEY}`;
-export const limit = `&limit=20`;
-export const query = `&q=`
+const KEY = "l6r7lzQX38ULq1n292LLpWHwUU4iNOWC";
+
+export const configApi = {
+  baseUrl: `https://api.giphy.com/v1/`,
+  uploadUrl: 'http://upload.giphy.com/v1/gifs',
+  searchUrl: "gifs/search",
+  trendingUrl: "gifs/trending",
+  randomUrl: "gifs/random",
+  apiKey: `?api_key=${KEY}`,
+  limit: `&limit=20`,
+  query: `&q=`
+}
 
 export const searchInput = document.querySelector('input[type="search"]');
+export const searchButton = document.querySelector(".search__button");
+export const feed = document.querySelector(".feed__grid");
+export const trends = document.querySelector('.trends__grid');
+export const randomGif = document.querySelector(".random__wrapper");
 
 export const cardTemplate = document
   .querySelector("#grid-template")
   .content.querySelector(".grid");
 
-const configTabs = {
+export const configTabs = {
   linkSelector: '.menu__link',
   contentSelector: '.content__pane',
-  buttonAddSelector: '.header__add-btn',
+  buttonAddSelector: '.menu__add-btn',
   linkActiveClass: 'menu__link_active',
   contentShowClass: 'content__pane_show'
 }
-const configAddForm = {
+export const configAddForm = {
   formSelector: '.form',
   fileUploadSelector: '.upload',
   textContainerUploadSelector: '.upload__text',
@@ -30,21 +38,11 @@ const configAddForm = {
   buttonSelector: '.form__button',
   inactiveButtonClass: 'form__button_disabled'
 }
-const configValidation = {
+export const configValidation = {
   formSelector: '.form',
   inputSelector: '.form__input',
   submitButtonSelector: '.form__button',
   inactiveButtonClass: 'form__button_disabled',
   inputErrorClass: 'form__input_type_error',
   errorClass: 'form__error_visible'
-}
-const uploadUrl = 'http://upload.giphy.com/v1/gifs';
-const apiKey = '48eDHJgBXOuipy8tCNfx9u9vAtEvKgfp';
-
-export {
-  configTabs,
-  configAddForm,
-  configValidation,
-  uploadUrl,
-  apiKey
 }

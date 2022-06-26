@@ -1,8 +1,8 @@
 .random__wrapper {
+  max-width: fit-content;
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 10px;
   display: flex;
   justify-content: center;
-  margin: 40px auto;
-  max-width: fit-content;
 }

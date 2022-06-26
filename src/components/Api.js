@@ -1,19 +1,17 @@
-import {
-  searchUrl,
-  trendingUrl,
-  randomUrl,
-  apiKey,
-  limit,
-  query,
-} from "../utils/constants.js";
-
 export default class Api {
-  constructor({ baseUrl }) {
-    this._baseUrl = baseUrl;
+  constructor(config) {
+    this._baseUrl = config.baseUrl;
+    this._uploadUrl = config.uploadUrl;
+    this._searchUrl = config.searchUrl;
+    this._trendingUrl = config.trendingUrl,
+    this._randomUrl = config.randomUrl,
+    this._apiKey = config.apiKey,
+    this._limit = config.limit,
+    this._query = config.query
   }
 
   searchGifs(queryTerm) {
-    return fetch(this._baseUrl + searchUrl + apiKey + limit + query + queryTerm)
+    return fetch(this._baseUrl + this._searchUrl + this._apiKey + this._limit + this._query + queryTerm)
       .then((res) => {
         if (res) {
           return res.json();
@@ -28,7 +26,7 @@ export default class Api {
   }
 
   getTrendingGifs() {
-    return fetch(this._baseUrl + trendingUrl + apiKey + limit)
+    return fetch(this._baseUrl + this._trendingUrl + this._apiKey + this._limit)
       .then((res) => {
         if (res) {
           return res.json();
@@ -41,9 +39,9 @@ export default class Api {
       })
       .catch((err) => console.log(err));
   }
-  
+
   getRandomGif() {
-    return fetch(this._baseUrl + randomUrl + apiKey)
+    return fetch(this._baseUrl + this._randomUrl + this._apiKey)
       .then((res) => {
         if (res) {
           return res.json();
@@ -56,9 +54,9 @@ export default class Api {
       })
       .catch((err) => console.log(err));
   }
-  
-  addCard(formData) {
-    return fetch(`${this._baseUrl}?api_key=${this._apiKey}`, {
+
+  addGif(formData) {
+    return fetch(this._uploadUrl + this._apiKey, {
         method: "POST",
         body: formData,
       })

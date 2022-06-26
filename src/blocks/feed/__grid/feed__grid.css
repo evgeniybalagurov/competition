@@ -22,18 +22,30 @@
 } */
 
 .feed__grid {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 1rem;
+  width: 100%;
   list-style: none;
   columns: 4;
-    column-gap: 16px;
-  
-    @media (max-width: 1200px) {
-      columns: 3;
-    }
-  
-    @media (max-width: 992px) {
-      columns: 2;
-    }
-  
-    /* //@media (max-width: 768px) {columns: 1;} */
-  
+  column-gap: 16px;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 1200px) {
+  .feed__grid {
+    columns: 3;
   }
+}
+  
+@media screen and (min-width: 640px) and (max-width: 800px) {
+  .feed__grid {
+    columns: 2;
+  }
+}
+
+@media screen and (max-width: 640px){
+.feed__grid {
+   columns: 1;
+   width: 100%;
+  } 
+}

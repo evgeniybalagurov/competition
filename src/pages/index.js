@@ -1,12 +1,12 @@
 import "./index.css";
 import {
   configApi,
-  searchInput,
   cardTemplate,
   configTabs,
   configAddForm,
   configValidation,
-  searchButton,
+  searchInputElement,
+  searchButtonElement,
   feed,
   trends,
   randomGif
@@ -19,6 +19,7 @@ import Item from "../components/Item.js";
 import Tabs from '../components/Tabs.js';
 import Form from "../components/Form.js";
 import FormValidator from "../components/FormValidator.js";
+import Search from "../components/Search.js";
 
 const api = new Api(configApi);
 
@@ -119,21 +120,35 @@ const emptyFeed = () => {
   feed.innerHTML = "";
 }
 
-const renderSearchItems = () => {
-  emptyFeed();
-  api
-    .searchGifs(searchInput.value)
-    .then((data) => gifList.renderItems(data))
-    .catch((err) => console.log(err));
-}
-
-searchButton.addEventListener("click", () => {
-  renderSearchItems();
-});
-
-searchInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    renderSearchItems();
+const search = new Search(
+  searchButtonElement,
+  searchInputElement,
+  () => {
+    emptyFeed();
+    api
+      .searchGifs(searchInputElement.value)
+      .then((data) => gifList.renderItems(data))
+      .catch((err) => console.log(err));
   }
-});
+);
+
+search.setEventListeners();
+
+// const renderSearchItems = () => {
+//   emptyFeed();
+//   api
+//     .searchGifs(searchInput.value)
+//     .then((data) => gifList.renderItems(data))
+//     .catch((err) => console.log(err));
+// }
+
+// searchButton.addEventListener("click", () => {
+//   renderSearchItems();
+// });
+
+// searchInput.addEventListener("keypress", (event) => {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     renderSearchItems();
+//   }
+// });

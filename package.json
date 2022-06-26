@@ -19,6 +19,7 @@
   "homepage": "https://github.com/evgeniybalagurov/new-project#readme",
   "devDependencies": {
     "@babel/core": "^7.18.2",
+    "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",

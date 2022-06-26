@@ -4,11 +4,11 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/header/header.css);
-@import url(../blocks/header/__add-btn/header__add-btn.css);
 @import url(../blocks/logo/logo.css);
 @import url(../blocks/link/link.css);
 @import url(../blocks/menu/menu.css);
 @import url(../blocks/menu/menu__link/menu__link.css);
+@import url(../blocks/menu/__add-btn/menu__add-btn.css);
 @import url(../blocks/content/__tabs/content__tabs.css);
 @import url(../blocks/content/__pane/content__pane.css);
 @import url(../blocks/content/__pane/_show/content__pane_show.css);
@@ -18,8 +18,13 @@
 @import url(../blocks/search/__button/search__button.css);
 @import url(../blocks/feed/feed.css);
 @import url(../blocks/feed/__grid/feed__grid.css);
-@import url(../blocks/gifcard/gifcard.css);
-@import url(../blocks/gifcard/__image/gifcard__image.css);
+@import url(../blocks/grid/grid.css);
+@import url(../blocks/grid/__image/grid__image.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/random/random.css);
+@import url(../blocks/random/__wrapper/random__wrapper.css);
+@import url(../blocks/random/__gif/random__gif.css);
 @import url(../blocks/upload/upload.css);
 @import url(../blocks/upload/__text/upload__text.css);
 @import url(../blocks/upload/__button/upload__button.css);

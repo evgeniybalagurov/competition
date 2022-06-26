@@ -2,8 +2,20 @@
   list-style-type: none;
   margin: 0;
   padding: 0 0 32px;
-      display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .menu {
+    width: 100%;
+    min-width: 320px;
+    padding: 28px 27px 31px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 }

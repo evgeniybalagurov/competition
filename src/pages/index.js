@@ -6,7 +6,7 @@ import {
   configAddForm,
   configValidation,
   searchInputElement,
-  searchButtonElement,
+  searchFormElement,
   feed,
   trends,
   randomGif
@@ -109,7 +109,7 @@ const tabs = new Tabs(
             console.log(err)
             alert(`Error: ${err}`);
           });
-        break
+        break;
       case 3:
         api
           .getRandomGif()
@@ -120,7 +120,9 @@ const tabs = new Tabs(
             console.log(err);
             alert(`Error: ${err}`);
           });
-        break
+        break;
+      default:
+        break;
     }
   });
 
@@ -128,8 +130,7 @@ tabs.setEventListener();
 
 
 const search = new Search(
-  searchButtonElement,
-  searchInputElement,
+  searchFormElement,
   () => {
     gifList.resetContainer();
     api

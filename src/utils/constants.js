@@ -11,8 +11,8 @@ export const configApi = {
   query: `&q=`
 }
 
-export const searchInputElement = document.querySelector('input[type="search"]');
-export const searchButtonElement = document.querySelector('.search__button');
+export const searchFormElement = document.querySelector('.search__form');
+export const searchInputElement = searchFormElement.querySelector('input[type="search"]');
 export const feed = document.querySelector(".feed__grid");
 export const trends = document.querySelector('.trends__grid');
 export const randomGif = document.querySelector(".random__wrapper");

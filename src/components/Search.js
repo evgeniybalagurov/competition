@@ -1,19 +1,13 @@
 class Search {
-  constructor(buttonElement, inputElement, handleElementClick) {
-    this._buttonElement = buttonElement;
-    this._inputElement = inputElement;
+  constructor(formElement, handleElementClick) {
+    this._formElement = formElement;
     this._handleElementClick = handleElementClick;
   }
 
   setEventListeners() {
-    this._buttonElement.addEventListener("click", () => {
+    this._formElement.addEventListener("submit", (e) => {
+      e.preventDefault();
       this._handleElementClick();
-    });
-    this._inputElement.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        this._handleElementClick();
-      }
     });
   }
 }

@@ -28,11 +28,14 @@ class Tabs {
       this._addClass(this._contentElements[index], this._contentShowClass);
       this._handleElementClick(index);
     }));
-    if (this._buttonElement) this._buttonElement.addEventListener('click', () => {
-      this._removeActiveClass();
-      this._addClass(this._contentElements[this._contentElements.length - 1], this._contentShowClass);
-      this._handleElementClick(this._contentElements.length - 1);
-    })
+    
+    if (this._buttonElement) {
+      this._buttonElement.addEventListener('click', () => {
+        this._removeActiveClass();
+        this._addClass(this._contentElements[this._contentElements.length - 1], this._contentShowClass);
+        this._handleElementClick(this._contentElements.length - 1);
+      })
+    }
   }
 }
 
